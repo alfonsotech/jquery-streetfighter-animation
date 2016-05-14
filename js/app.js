@@ -1,4 +1,8 @@
 $(document).ready(function() {
+
+
+
+
 	//get ryu into ready state on mouse-enter
   $('.ryu').mouseenter(function() {
   	$('.ryu-still').hide();
@@ -37,6 +41,23 @@ $(document).ready(function() {
     $(this).css('left', '520px');
   }
 );
+
+/*NOT WORKING- ryu still gets hidden, but only on mouseleave, and cool ryu is not appearing at all. Look slike I need to put this block somewhere else, like maybe before mouseleave script? */
+$(document).keydown(function(e) {
+    if (e.keyCode == 88) {
+      
+      $('.ryu-still').hide();
+      $('.ryu-cool').show();
+    }   
+  })
+	.keyup(function(e) {
+    if (e.keyCode == 88) { 
+      $('.ryu-cool').hide();
+      $('.ryu-still').show();
+    }
+  });
+
+
 }); //document ready end
 
 function playHadouken () {
