@@ -5,19 +5,19 @@ $(document).ready(function() {
 
 	//get ryu into ready state on mouse-enter
   $('.ryu').mouseenter(function() {
-  	$('.ryu-still').hide();
+  	$('.ryu div').hide();
   	$('.ryu-ready').show();
   })
   .mouseleave(function() {
   	//get ryu back to still on mouse-leave
-    $('.ryu-ready').hide();
+    $('.ryu div').hide();
 	$('.ryu-still').show();
   })
 
 
 .mousedown(function() {
   playHadouken();
-  $('.ryu-ready').hide();
+  $('.ryu div').hide();
   $('.ryu-throwing').show();
   $('.hadouken').finish().show()
   .animate(
@@ -30,7 +30,7 @@ $(document).ready(function() {
   );
 })
   .mouseup(function() {
-  $('.ryu-throwing').hide();
+  $('.ryu div').hide();
   $('.ryu-ready').show();
 });
   $('.hadouken').show().animate(
@@ -42,17 +42,16 @@ $(document).ready(function() {
   }
 );
 
-/*NOT WORKING- ryu still gets hidden, but only on mouseleave, and cool ryu is not appearing at all. Look slike I need to put this block somewhere else, like maybe before mouseleave script? */
 $(document).keydown(function(e) {
     if (e.keyCode == 88) {
       
-      $('.ryu-still').hide();
+      $('.ryu div').hide();
       $('.ryu-cool').show();
     }   
   })
 	.keyup(function(e) {
     if (e.keyCode == 88) { 
-      $('.ryu-cool').hide();
+      $('.ryu div').hide();
       $('.ryu-still').show();
     }
   });
